@@ -9,9 +9,11 @@ export class MyS3 {
   }
 
   private initializeS3Connection(): void {
+    const isLocalEnv = !process.env.LAMBDA_TASK_ROOT;
+
     this.s3 = new S3({
       region: 'eu-west-1',
-      credentials: new SharedIniFileCredentials({ profile: 'graderef' }),
+      ...(isLocalEnv ? { credentials: new SharedIniFileCredentials({ profile: 'graderef' }) } : {}),
     });
   }
 

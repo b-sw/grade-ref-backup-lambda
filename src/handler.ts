@@ -26,5 +26,3 @@ export const main = async () => {
   const key = dayjs().format('YYYY-MM-DD HH-mm-ss');
   stream.pipe(createGzip()).pipe(s3.getWriteStream(`${key}.sql.gz`));
 };
-
-main();
