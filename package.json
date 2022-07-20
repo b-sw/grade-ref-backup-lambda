@@ -9,13 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.131.0",
+    "aws-sdk": "^2.1178.0",
     "dayjs": "^1.11.3",
     "dotenv": "^16.0.1",
     "mysqldump": "^3.2.0",
+    "s3-streams": "^0.4.0",
     "tsc": "^2.0.4"
   },
   "devDependencies": {
-    "@types/node": "^18.0.6"
+    "@types/node": "^18.0.6",
+    "@types/s3-streams": "^0.4.2"
   }
 }

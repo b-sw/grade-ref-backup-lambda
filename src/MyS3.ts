@@ -1,40 +1,24 @@
-require('dotenv').config();
-import { S3 } from '@aws-sdk/client-s3';
+import { S3, SharedIniFileCredentials } from 'aws-sdk';
+import { WriteStream } from 's3-streams';
 
 export class MyS3 {
-  private client!: S3;
+  private s3!: S3;
 
   constructor() {
     this.initializeS3Connection();
   }
 
   private initializeS3Connection(): void {
-    const isLocalEnv = !process.env.LAMBDA_TASK_ROOT;
-
-    if (isLocalEnv) {
-      this.client = new S3({
-        region: 'eu-west-1',
-        credentials: {
-          accessKeyId: process.env.AWS_LOGIN_ACCESS_KEY_ID!,
-          secretAccessKey: process.env.AWS_LOGIN_SECRET_ACCESS_KEY!,
-        },
-      });
-    } else {
-      this.client = new S3({
-        region: 'eu-west-1',
-      });
-    }
+    this.s3 = new S3({
+      region: 'eu-west-1',
+      credentials: new SharedIniFileCredentials({ profile: 'graderef' }),
+    });
   }
 
-  public async uploadContentToFile(content: string, key: string): Promise<void> {
-    return new Promise((resolve) => {
-      this.client
-        .putObject({
-          Bucket: process.env.AWS_BUCKET!,
-          Key: key,
-          Body: content,
-        })
-        .then(() => resolve());
+  public getWriteStream(key: string) {
+    return new WriteStream(this.s3, {
+      Bucket: process.env.AWS_BUCKET!,
+      Key: key,
     });
   }
 }

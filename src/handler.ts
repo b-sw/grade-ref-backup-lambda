@@ -1,8 +1,9 @@
 require('dotenv').config();
-import { readFileSync } from 'fs';
+import { createReadStream } from 'fs';
 import mysqldump from 'mysqldump';
 import { MyS3 } from './MyS3';
 import dayjs from 'dayjs';
+import { createGzip } from 'zlib';
 
 export const main = async () => {
   const isLocalEnv = !process.env.LAMBDA_TASK_ROOT;
@@ -19,8 +20,11 @@ export const main = async () => {
   });
 
   const s3 = new MyS3();
-  const content = readFileSync(dumpPath, 'utf8');
+
+  const stream = createReadStream(dumpPath);
 
   const key = dayjs().format('YYYY-MM-DD HH-mm-ss');
-  await s3.uploadContentToFile(content, `${key}.sql`);
+  stream.pipe(createGzip()).pipe(s3.getWriteStream(`${key}.sql.gz`));
 };
+
+main();
