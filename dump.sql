@@ -138,6 +138,17 @@ CREATE TABLE IF NOT EXISTS `match` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 # ------------------------------------------------------------
+# SCHEMA DUMP FOR TABLE: migrations
+# ------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `timestamp` bigint(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB AUTO_INCREMENT = 4 DEFAULT CHARSET = utf8mb4;
+
+# ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: team
 # ------------------------------------------------------------
 
@@ -176,6 +187,46 @@ INSERT INTO
   `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
 VALUES
   (
+    '1fd50458-0dc5-482a-8a7d-6c071788fb31',
+    'Positive',
+    'Wbieganie w pole karne w decyzjach krytycznych',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'dd83d378-43cb-4baa-b2ee-9952c67839b8'
+  );
+INSERT INTO
+  `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
+VALUES
+  (
+    '31072842-1946-463f-b7c3-ebcaa1c477f8',
+    'Negative',
+    'Wbieganie w pole karne w decyzjach krytycznych',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'dd83d378-43cb-4baa-b2ee-9952c67839b8'
+  );
+INSERT INTO
+  `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
+VALUES
+  (
+    '54819fa6-e4d5-4f7c-a376-ebffefeca4e9',
+    'Positive',
+    'Wbieganie w pole karne w decyzjach krytycznych',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'd09d20df-cf32-4979-bbb0-cf17b9e3a475'
+  );
+INSERT INTO
+  `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
+VALUES
+  (
+    '57675197-3ac9-41d6-b43b-e3641329009d',
+    'Positive',
+    'Wbieganie w pole karne w decyzjach krytycznych',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'd09d20df-cf32-4979-bbb0-cf17b9e3a475'
+  );
+INSERT INTO
+  `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
+VALUES
+  (
     '6ea4a9fe-008c-11ed-81bf-960000b5fbdb',
     'Positive',
     'Dobra polityka kartkowa',
@@ -206,6 +257,16 @@ INSERT INTO
   `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
 VALUES
   (
+    '7a53a3a2-08bd-42dc-8c80-7869b1877b6b',
+    'Negative',
+    'Wbieganie w pole karne w decyzjach krytycznych',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'd09d20df-cf32-4979-bbb0-cf17b9e3a475'
+  );
+INSERT INTO
+  `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
+VALUES
+  (
     '7dd41c24-008c-11ed-81bf-960000b5fbdb',
     'Negative',
     'Zły timming decyzji',
@@ -221,6 +282,76 @@ VALUES
     'Zbyt flegmatyczna reakcja po przerwaniu gry',
     '1ebbaeff-8dba-4192-8f7c-eff83d010155',
     '9ed430ee-d21d-404b-9160-3063c1408ec1'
+  );
+INSERT INTO
+  `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
+VALUES
+  (
+    '838c3841-dce7-4792-99bd-fac8c96c75a2',
+    'Positive',
+    'Wbieganie w pole karne w decyzjach krytycznych',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'd09d20df-cf32-4979-bbb0-cf17b9e3a475'
+  );
+INSERT INTO
+  `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
+VALUES
+  (
+    '9cb149b7-df00-433d-90c2-b8b9d0363082',
+    'Negative',
+    'Wbieganie w pole karne w decyzjach krytycznych',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'dd83d378-43cb-4baa-b2ee-9952c67839b8'
+  );
+INSERT INTO
+  `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
+VALUES
+  (
+    'b3c21c77-3efd-4d5a-866a-78bab93598d5',
+    'Negative',
+    'Zbyt flegmatyczna reakcja po przerwaniu gry',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'd09d20df-cf32-4979-bbb0-cf17b9e3a475'
+  );
+INSERT INTO
+  `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
+VALUES
+  (
+    'bdc538c4-a691-47f1-9a20-574c31a13756',
+    'Positive',
+    'bbbbbbbaasdasdf',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'c02160f3-d499-498d-a161-07c7d309b54c'
+  );
+INSERT INTO
+  `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
+VALUES
+  (
+    'd716565c-4dad-43cd-9e66-1ad656be6f19',
+    'Positive',
+    'Wbieganie w pole karne w decyzjach krytycznych',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'dd83d378-43cb-4baa-b2ee-9952c67839b8'
+  );
+INSERT INTO
+  `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
+VALUES
+  (
+    'dd1f361d-4d84-4ba7-8ba0-1884621ab23e',
+    'Positive',
+    'Wbieganie w pole karne w decyzjach krytycznych',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'dd83d378-43cb-4baa-b2ee-9952c67839b8'
+  );
+INSERT INTO
+  `feature` (`id`, `type`, `description`, `refereeId`, `matchId`)
+VALUES
+  (
+    'deedf762-9d32-46e2-bd1a-ceccec08b151',
+    'Negative',
+    'Zbyt flegmatyczna reakcja po przerwaniu gry',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'd09d20df-cf32-4979-bbb0-cf17b9e3a475'
   );
 
 # ------------------------------------------------------------
@@ -336,6 +467,116 @@ VALUES
     1,
     'be208742-03a6-4eb4-9cbf-467289f7c29a',
     '9ed430ee-d21d-404b-9160-3063c1408ec1'
+  );
+INSERT INTO
+  `foul` (
+    `id`,
+    `minute`,
+    `card`,
+    `playerNumber`,
+    `description`,
+    `valid`,
+    `teamId`,
+    `matchId`
+  )
+VALUES
+  (
+    '77972365-c274-4b28-8cab-dd98a07315e0',
+    33,
+    'Red',
+    33,
+    'SAFASFGASGAG2',
+    1,
+    '8807edaa-6df0-42de-a776-3477f55d75b5',
+    'dd83d378-43cb-4baa-b2ee-9952c67839b8'
+  );
+INSERT INTO
+  `foul` (
+    `id`,
+    `minute`,
+    `card`,
+    `playerNumber`,
+    `description`,
+    `valid`,
+    `teamId`,
+    `matchId`
+  )
+VALUES
+  (
+    '7a4c24a5-2b5f-4d04-9b8b-f60abe10c15a',
+    1,
+    'Red',
+    1,
+    'aaaaaa',
+    0,
+    '8807edaa-6df0-42de-a776-3477f55d75b5',
+    'dd83d378-43cb-4baa-b2ee-9952c67839b8'
+  );
+INSERT INTO
+  `foul` (
+    `id`,
+    `minute`,
+    `card`,
+    `playerNumber`,
+    `description`,
+    `valid`,
+    `teamId`,
+    `matchId`
+  )
+VALUES
+  (
+    '809ce2f4-d870-489b-8cf9-0b9e1595405c',
+    66,
+    'Red',
+    31,
+    'SAASFASFGASG',
+    1,
+    '234a6228-e5df-49b8-80be-cf6424f6f39b',
+    'dd83d378-43cb-4baa-b2ee-9952c67839b8'
+  );
+INSERT INTO
+  `foul` (
+    `id`,
+    `minute`,
+    `card`,
+    `playerNumber`,
+    `description`,
+    `valid`,
+    `teamId`,
+    `matchId`
+  )
+VALUES
+  (
+    'f63f8680-cc5b-460c-8f64-81329a6ec359',
+    5,
+    'Red',
+    15,
+    '21512512512345sZXfasfasf',
+    1,
+    '234a6228-e5df-49b8-80be-cf6424f6f39b',
+    'dd83d378-43cb-4baa-b2ee-9952c67839b8'
+  );
+INSERT INTO
+  `foul` (
+    `id`,
+    `minute`,
+    `card`,
+    `playerNumber`,
+    `description`,
+    `valid`,
+    `teamId`,
+    `matchId`
+  )
+VALUES
+  (
+    'fb8da08a-c997-4731-b597-340806636115',
+    9,
+    'Red',
+    30,
+    'asfasfgasfasfgasfasfgasfasfgasfasfg',
+    0,
+    '8807edaa-6df0-42de-a776-3477f55d75b5',
+    'dd83d378-43cb-4baa-b2ee-9952c67839b8'
   );
 
 # ------------------------------------------------------------
@@ -1090,25 +1331,25 @@ INSERT INTO
   )
 VALUES
   (
-    '9ed430ee-d21d-404b-9160-3063c1408ec1',
-    'some stadium',
-    'be208742-03a6-4eb4-9cbf-467289f7c29a',
+    '926c471b-b1bf-4bce-a0ee-8e8f3a50060e',
+    'adgasdg',
+    '234a6228-e5df-49b8-80be-cf6424f6f39b',
     '296cd48d-89fa-464f-9937-b0680b134e00',
     '1ebbaeff-8dba-4192-8f7c-eff83d010155',
     'd44fc7d0-969c-4f2e-b385-b9f36e2cf37e',
     'aea05e5c-09be-4c8f-b59e-bf8d09e33f7a',
-    '2022-07-28 10:01:00',
+    '2022-07-21 11:00:00',
+    '2022-07-23 15:44:49',
+    '2107220102',
     NULL,
-    '2807220101',
-    NULL,
-    '14312123',
-    NULL,
-    '2022-07-10 22:21:33',
-    NULL,
-    NULL,
+    '14407924',
+    4,
+    '2022-07-23 16:20:29',
+    'safasfgasfggggg',
+    'adfasfasdf',
     NULL,
     NULL,
-    NULL
+    'league=aea05e5c-09be-4c8f-b59e-bf8d09e33f7a/match=926c471b-b1bf-4bce-a0ee-8e8f3a50060e/report=Tv/Tv 2022-07-23T20:50:20:586.pdf'
   );
 INSERT INTO
   `match` (
@@ -1134,24 +1375,24 @@ INSERT INTO
   )
 VALUES
   (
-    'b1e3d7b2-976e-42fa-8994-c7e0c7bb2289',
+    '9ed430ee-d21d-404b-9160-3063c1408ec1',
     'some stadium',
-    '8807edaa-6df0-42de-a776-3477f55d75b5',
+    'be208742-03a6-4eb4-9cbf-467289f7c29a',
     '296cd48d-89fa-464f-9937-b0680b134e00',
-    '4a7163b5-221b-4da2-86c4-a71b97246c17',
-    '143e808d-e7e2-4926-b65c-db46944dcfcd',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'd44fc7d0-969c-4f2e-b385-b9f36e2cf37e',
     'aea05e5c-09be-4c8f-b59e-bf8d09e33f7a',
-    '2022-06-11 10:45:00',
+    '2022-07-28 10:01:00',
     NULL,
-    '1106220105',
+    '2807220101',
     NULL,
-    '14313485',
+    '14312123',
+    NULL,
+    '2022-07-10 22:21:33',
+    'asfasfgasgasg',
     NULL,
     NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
+    'league=aea05e5c-09be-4c8f-b59e-bf8d09e33f7a/match=9ed430ee-d21d-404b-9160-3063c1408ec1/report=Mentor/Mentor 2022-07-24T16:44:38:302.pdf',
     NULL
   );
 INSERT INTO
@@ -1186,10 +1427,54 @@ VALUES
     '143e808d-e7e2-4926-b65c-db46944dcfcd',
     'aea05e5c-09be-4c8f-b59e-bf8d09e33f7a',
     '2022-06-04 14:00:00',
-    NULL,
+    '2022-07-23 20:38:34',
     '0406220103',
     NULL,
     '13423998',
+    6,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL
+  );
+INSERT INTO
+  `match` (
+    `id`,
+    `stadium`,
+    `homeTeamId`,
+    `awayTeamId`,
+    `refereeId`,
+    `observerId`,
+    `leagueId`,
+    `matchDate`,
+    `refereeGradeDate`,
+    `userReadableKey`,
+    `refereeSmsId`,
+    `observerSmsId`,
+    `refereeGrade`,
+    `overallGradeDate`,
+    `refereeNote`,
+    `overallGrade`,
+    `observerReportKey`,
+    `mentorReportKey`,
+    `tvReportKey`
+  )
+VALUES
+  (
+    'b858118b-5528-4664-97a7-f491354a82be',
+    'sadasgasg',
+    '234a6228-e5df-49b8-80be-cf6424f6f39b',
+    '8807edaa-6df0-42de-a776-3477f55d75b5',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    'd44fc7d0-969c-4f2e-b385-b9f36e2cf37e',
+    'aea05e5c-09be-4c8f-b59e-bf8d09e33f7a',
+    '2022-07-28 09:26:00',
+    NULL,
+    '2807220102',
+    NULL,
+    '14455024',
     NULL,
     NULL,
     NULL,
@@ -1230,16 +1515,16 @@ VALUES
     '143e808d-e7e2-4926-b65c-db46944dcfcd',
     'aea05e5c-09be-4c8f-b59e-bf8d09e33f7a',
     '2022-06-08 09:51:00',
-    NULL,
+    '2022-07-23 20:34:02',
     '0806220102',
     NULL,
     '13423923',
+    5,
+    '2022-07-23 20:38:45',
     NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
+    '65678ghjjhfutyg',
+    'league=aea05e5c-09be-4c8f-b59e-bf8d09e33f7a/match=c02160f3-d499-498d-a161-07c7d309b54c/report=Observer/Observer 2022-07-24T12:22:04:656.pdf',
+    'league=aea05e5c-09be-4c8f-b59e-bf8d09e33f7a/match=c02160f3-d499-498d-a161-07c7d309b54c/report=Observer/Observer 2022-07-23T20:39:08:294.pdf',
     NULL
   );
 INSERT INTO
@@ -1398,6 +1683,94 @@ INSERT INTO
   )
 VALUES
   (
+    'd09d20df-cf32-4979-bbb0-cf17b9e3a475',
+    'sgasaaaaa',
+    'be208742-03a6-4eb4-9cbf-467289f7c29a',
+    '296cd48d-89fa-464f-9937-b0680b134e00',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    '143e808d-e7e2-4926-b65c-db46944dcfcd',
+    'aea05e5c-09be-4c8f-b59e-bf8d09e33f7a',
+    '2022-07-31 09:26:00',
+    NULL,
+    '3107220101',
+    NULL,
+    '14455030',
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL
+  );
+INSERT INTO
+  `match` (
+    `id`,
+    `stadium`,
+    `homeTeamId`,
+    `awayTeamId`,
+    `refereeId`,
+    `observerId`,
+    `leagueId`,
+    `matchDate`,
+    `refereeGradeDate`,
+    `userReadableKey`,
+    `refereeSmsId`,
+    `observerSmsId`,
+    `refereeGrade`,
+    `overallGradeDate`,
+    `refereeNote`,
+    `overallGrade`,
+    `observerReportKey`,
+    `mentorReportKey`,
+    `tvReportKey`
+  )
+VALUES
+  (
+    'dd83d378-43cb-4baa-b2ee-9952c67839b8',
+    'asgsgggggggggggg',
+    '234a6228-e5df-49b8-80be-cf6424f6f39b',
+    '8807edaa-6df0-42de-a776-3477f55d75b5',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
+    '143e808d-e7e2-4926-b65c-db46944dcfcd',
+    'aea05e5c-09be-4c8f-b59e-bf8d09e33f7a',
+    '2022-08-07 09:26:00',
+    '2022-07-24 12:12:11',
+    '0708220102',
+    NULL,
+    '14455029',
+    8.4,
+    '2022-07-24 16:33:11',
+    '2315125125wsagadgadg\n\ndasfgasg\n2315125125wsagadgadg\n\ndasfgasg\n2315125125wsagadgadg\n\ndasfgasg2315125125wsagadgadg\n\ndasfgasg\n2315125125wsagadgadg\n\ndasfgasg\n2315125125wsagadgadg\n\ndasfgasg\n2315125125wsagadgadg\n\ndasfgasg\n2315125125wsagadgadg\n\ndasfgasg2315125125wsagadgadg\n\ndasfgasg\n2315125125wsagadgadg\n\ndasfgasg\ndasfgasg\n2315125125wsagadgadg\n\ndasfgasg2315125125wsagadgadg\n\ndasfgasg\n2315125125wsagadgadg\n\ndasfgasg\ndasfgasg\n2315125125wsagadgadg\n\ndasfgasg2315125125wsagadgadg\n\ndasfgasg\n2315125125wsagadgadg\n\ndasfgasg\ndasfgasg',
+    'Mecz przesędziowany na dobrym poziomie 4                ligowsadfasgfym we wszystkich aspektach pracy na boisku  - bez najmniejszych uwag pod względem fizyczn\n\n\ności /sylwetki, kondycji, tempa przemieszczania itp./ ; oceny samych wydarzeń boiskowych /fauli, pokazanych kartek, zastosowanych korzyści/ oraz pod względem techniki sędziowania /gwizdek, zachowanie i skuteczność przy odsuwaniu murów,  kontaktów z zawodnikami, działań proaktywnych,  reprymend na boisku i ławkach itp./. Mecz nie obfitował może w trudne sytuacje w polach karnych, ale po I bezbarwnej połowie gra później \"nabrała rumieńców\" - sporo było szybkich akcji, strzałów na bramkę i sytuacji podbramkowych oraz samych bramek. W tym wszystkim dobrze sędzia się odnajdywał, oddzielając te kontakty które mieściły sie w przepisach i /podkreślę to raz jeszcze/ stosując kilka przytomnych korzyści z których ta z 63 min. mogłaby być ozdobą niejednego meczu na szczeblu  centralnym - od fauli, które były odgwizdywane bez zbędnej zwłoki. Rzut karny w 57 min. podyktowany prawidłowo z bardzo dobrej pozycji. Kartki dane \"w punkt\" - również ta dla trenera gospodarzy, bo tak zachowywać się w stosunku do sędziego nie uchodzi. Kontakt z asystentami bez zarzutu - ich wskazania odgwizdywane \"w tempo\". Jedyna sytuacja gdzie sędzia trochę się zagubił to ta w 45 min.  - jak już pobiegłeś w prawą stronę pola karnego, by rozdzielić zawodników, to wycofaj sie stamtąd przed gwizdkiem, bo potem wyglądało to trochę śmiesznie. Uważam także, iż  nie  jest błędem pokazanie gestem ilości doliczonego czasu na 20 sek. przed nominalnym końcem  zawodów /po bramce na 4:4/, bo wówczas wszyscy są zainteresowani Tobą ile pokażesz i wszyscy to widzą. Rozmawialiśmy o tym po meczu i szkoda, iż podobno wytyczne są inne i 15 sekund później przy emocjonującej końcówce niewiele osób zobaczyło twój gest, a później są dopytywanki z ławki \"ile doliczył?\". Reasumując: sędzia perspektywiczny i ciągle w moim mniemaniu rozwija swoje umiejętności we wszystkich aspektach pracy na boisku . As i 2. Dobrze wykonana praca po każdym względem. Do oceny wybrane sytuacje z min. : 26 -cofniecie faulu; 42- ż.k. po puszczonej akcji z bramką; 45-złe ustawienie; 63 extra korzyść; 88 czy nie gest doliczonego czasu po bramce na 4:4; 90+1 ż.k. dla trenera gospodarzy.',
+    'league=aea05e5c-09be-4c8f-b59e-bf8d09e33f7a/match=dd83d378-43cb-4baa-b2ee-9952c67839b8/report=Observer/Observer 2022-07-24T15:20:16:239.pdf',
+    NULL,
+    NULL
+  );
+INSERT INTO
+  `match` (
+    `id`,
+    `stadium`,
+    `homeTeamId`,
+    `awayTeamId`,
+    `refereeId`,
+    `observerId`,
+    `leagueId`,
+    `matchDate`,
+    `refereeGradeDate`,
+    `userReadableKey`,
+    `refereeSmsId`,
+    `observerSmsId`,
+    `refereeGrade`,
+    `overallGradeDate`,
+    `refereeNote`,
+    `overallGrade`,
+    `observerReportKey`,
+    `mentorReportKey`,
+    `tvReportKey`
+  )
+VALUES
+  (
     'e94c0c6b-db35-478d-bf19-8dfb5ccd8d43',
     'some stadium',
     'de2fa7b1-5a27-4355-a039-5825d22639be',
@@ -1443,18 +1816,18 @@ INSERT INTO
 VALUES
   (
     'fc577b94-e1e2-42cf-96e4-b540ca5d1b24',
-    'some stadium',
+    'some stadium123',
     '234a6228-e5df-49b8-80be-cf6424f6f39b',
     '296cd48d-89fa-464f-9937-b0680b134e00',
-    '393a0797-1f6d-42f0-b1f9-ef120d6756c7',
+    '1ebbaeff-8dba-4192-8f7c-eff83d010155',
     'd44fc7d0-969c-4f2e-b385-b9f36e2cf37e',
     'aea05e5c-09be-4c8f-b59e-bf8d09e33f7a',
     '2022-07-30 08:30:00',
-    '2022-06-15 16:45:34',
+    '2022-07-23 15:55:10',
     '3007220102',
     NULL,
-    '14312823',
-    2.5,
+    '14454975',
+    2.2,
     NULL,
     NULL,
     NULL,
@@ -1462,6 +1835,11 @@ VALUES
     NULL,
     NULL
   );
+
+# ------------------------------------------------------------
+# DATA DUMP FOR TABLE: migrations
+# ------------------------------------------------------------
+
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: team

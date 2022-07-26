@@ -19,10 +19,22 @@ export const main = async () => {
     dumpToFile: dumpPath,
   });
 
+  console.log('Dumped to file');
   const s3 = new MyS3();
 
   const stream = createReadStream(dumpPath);
-
   const key = dayjs().format('YYYY-MM-DD HH-mm-ss');
-  stream.pipe(createGzip()).pipe(s3.getWriteStream(`${key}.sql.gz`));
+  const writeStream = s3.getWriteStream(`${key}.sql.gz`);
+
+  stream.pipe(createGzip()).pipe(writeStream);
+  console.log('Opened S3 write stream');
+
+  const end = new Promise((resolve) => {
+    writeStream.on('finish', resolve);
+  });
+
+  await end;
+  console.log('Finished writing to S3 stream');
 };
+
+main();

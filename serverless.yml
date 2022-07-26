@@ -17,7 +17,7 @@ provider:
           Resource: 'arn:aws:s3:::graderef-prod-dumps/*'
 
 functions:
-  main:
+  prod-db:
     handler: dist/handler.main
     events:
       - schedule: cron(0,30 * ? * * *)
@@ -27,3 +27,13 @@ functions:
       DB_PASSWORD: ${env:DB_PASSWORD}
       DB_DATABASE: ${env:DB_DATABASE}
       AWS_BUCKET: ${env:AWS_BUCKET}
+  dev-db:
+    handler: dist/handler.main
+    events:
+      - schedule: cron(0,30 * ? * * *)
+    environment:
+      DB_HOST: ${env:DB_HOST_DEV}
+      DB_USERNAME: ${env:DB_USERNAME_DEV}
+      DB_PASSWORD: ${env:DB_PASSWORD_DEV}
+      DB_DATABASE: ${env:DB_DATABASE_DEV}
+      AWS_BUCKET: ${env:AWS_BUCKET_DEV}
