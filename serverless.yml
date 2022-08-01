@@ -15,6 +15,9 @@ provider:
         - Effect: Allow
           Action: 's3:PutObject'
           Resource: 'arn:aws:s3:::graderef-prod-dumps/*'
+        - Effect: Allow
+          Action: 's3:PutObject'
+          Resource: 'arn:aws:s3:::graderef-dev-dumps/*'
 
 functions:
   prod-db:
@@ -25,6 +28,7 @@ functions:
       DB_HOST: ${env:DB_HOST}
       DB_USERNAME: ${env:DB_USERNAME}
       DB_PASSWORD: ${env:DB_PASSWORD}
+      DB_PORT: ${env:DB_PORT}
       DB_DATABASE: ${env:DB_DATABASE}
       AWS_BUCKET: ${env:AWS_BUCKET}
   dev-db:
@@ -35,5 +39,6 @@ functions:
       DB_HOST: ${env:DB_HOST_DEV}
       DB_USERNAME: ${env:DB_USERNAME_DEV}
       DB_PASSWORD: ${env:DB_PASSWORD_DEV}
+      DB_PORT: ${env:DB_PORT_DEV}
       DB_DATABASE: ${env:DB_DATABASE_DEV}
       AWS_BUCKET: ${env:AWS_BUCKET_DEV}

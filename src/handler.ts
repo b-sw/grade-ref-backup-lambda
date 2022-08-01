@@ -5,19 +5,35 @@ import { MyS3 } from './MyS3';
 import dayjs from 'dayjs';
 import { createGzip } from 'zlib';
 
+const MAX_RETRIES = 10;
+
 export const main = async () => {
   const isLocalEnv = !process.env.LAMBDA_TASK_ROOT;
   const dumpPath = isLocalEnv ? 'dump.sql' : '/tmp/dump.sql';
 
-  await mysqldump({
-    connection: {
-      host: process.env.DB_HOST!,
-      user: process.env.DB_USERNAME!,
-      password: process.env.DB_PASSWORD!,
-      database: process.env.DB_DATABASE!,
-    },
-    dumpToFile: dumpPath,
-  });
+  console.log(process.env.DB_HOST);
+  console.log(process.env.DB_USERNAME);
+  console.log(process.env.DB_PORT);
+  console.log(process.env.DB_PASSWORD);
+  console.log(process.env.DB_DATABASE);
+
+  for (let i = 0; i < MAX_RETRIES; i++) {
+    try {
+      await mysqldump({
+        connection: {
+          host: process.env.DB_HOST!,
+          user: process.env.DB_USERNAME!,
+          port: +process.env.DB_PORT!,
+          password: process.env.DB_PASSWORD!,
+          database: process.env.DB_DATABASE!,
+        },
+        dumpToFile: dumpPath,
+      });
+      break;
+    } catch (e) {
+      continue;
+    }
+  }
 
   console.log('Dumped to file');
   const s3 = new MyS3();
