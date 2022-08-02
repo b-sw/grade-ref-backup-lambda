@@ -8,7 +8,7 @@ provider:
   runtime: nodejs12.x
   stage: prod
   region: eu-west-1
-  profile: graderef
+  # profile: graderef
   iam:
     role:
       statements:
