@@ -9,7 +9,7 @@ export class MyS3 {
   }
 
   private initializeS3Connection(): void {
-    const isLocalEnv = !process.env.LAMBDA_TASK_ROOT;
+    const isLocalEnv = !process.env.LAMBDA_TASK_ROOT || process.env.IS_LOCAL_ENV;
 
     this.s3 = new S3({
       region: 'eu-west-1',
