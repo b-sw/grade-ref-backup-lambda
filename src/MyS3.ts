@@ -10,11 +10,10 @@ export class MyS3 {
 
   private initializeS3Connection(): void {
     const isLambda = process.env.LAMBDA_TASK_ROOT;
-    const isEditor = process.env.IS_LOCAL_ENV;
 
     this.s3 = new S3({
       region: 'eu-west-1',
-      ...(isLambda && !isEditor ? { credentials: new SharedIniFileCredentials({ profile: 'graderef' }) } : {}),
+      ...(!isLambda ? { credentials: new SharedIniFileCredentials({ profile: 'graderef' }) } : {}),
     });
   }
 
